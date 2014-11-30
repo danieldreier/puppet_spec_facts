@@ -10,7 +10,13 @@ Enterprise.
 Puppet module developers (should) use rspec-puppet to validate conditional logic. One of the most common forms
 of conditional logic is to change behavior based on operating system or linux distribution. Unfortunately, most
 rspec-puppet tests only include a handful of relevant facts from one or two popular Linux distributions.
-This gem is intended to provide a flexible way to iterate across platforms with full facter facts. 
+This gem is intended to provide a flexible way to iterate across platforms with full facter facts.
+
+In order to be useful, this needs a wide range of facts from different platforms. You can help by making pull
+requests, or by submitting facts to [facts.whilefork.com](http://facts.whilefork.com) via HTTP POST:
+```bash
+facter --json | curl -H "Content-Type: application/json" -d @- http://facts.whilefork.com
+```
 
 ## Installation
 
@@ -28,6 +34,8 @@ Add this line to your `spec/spec_helper.rb` file:
 ## Usage
 
 The code below doesn't quite work yet, so wait for an update on this before trying to use it.
+
+To iterate through all available fact sets, do something like the following in your spec file:
 
 ```rspec
 require 'spec_helper'
