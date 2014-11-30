@@ -11,7 +11,6 @@ require 'semver'
 # cool you'll use facter --json | jq . > filename.json to prettyprint it
 
 module PuppetSpecFacts
-  # Your code goes here...
   def self.puppet_platforms
     platforms = {}
     file_list = Dir.glob("#{@proj_root}/**/*.json")
@@ -22,7 +21,7 @@ module PuppetSpecFacts
                                               operatingsystemrelease: fact_hash['operatingsystemrelease'],
                                               architecture: fact_hash['architecture'])
       abort("a platform named '#{platform_name}' has already been defined") if platforms[platform_name] != nil
-      fact_hash[fact_style] = fact_style(fact_hash)
+      fact_hash['fact_style'] = fact_style(fact_hash)
       platforms[platform_name] = fact_hash
     end
     platforms
