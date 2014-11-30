@@ -102,7 +102,7 @@
   "sp_boot_mode": "normal_boot",
   "sp_boot_volume": "Macintosh HD",
   "sp_kernel_version": "Darwin 13.4.0",
-  "sp_local_host_name": "Daniel’s MacBook Pro",
+  "sp_local_host_name": "MacBook Pro",
   "sp_os_version": "OS X 10.9.5 (13F34)",
   "sp_secure_vm": "secure_vm_enabled",
   "sp_uptime": "up 7:5:7:38",
@@ -152,5 +152,6 @@
   "uptime": "7 days",
   "uptime_days": 7,
   "uptime_hours": 173,
-  "uptime_seconds": 623230
+  "uptime_seconds": 623230,
+  "fact_style": "structured"
 }
