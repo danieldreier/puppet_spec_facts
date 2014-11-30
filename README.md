@@ -7,23 +7,73 @@ This gem provides facts for rspec-puppet, much like
 toward open source puppet whereas puppet_facts seems to be aimed at Puppet
 Enterprise.
 
+Puppet module developers (should) use rspec-puppet to validate conditional logic. One of the most common forms
+of conditional logic is to change behavior based on operating system or linux distribution. Unfortunately, most
+rspec-puppet tests only include a handful of relevant facts from one or two popular Linux distributions.
+This gem is intended to provide a flexible way to iterate across platforms with full facter facts. 
+
 ## Installation
 
-Add this line to your application's Gemfile:
+Add this line to your puppet module's Gemfile:
 
+```gemfile
     gem 'puppet_spec_facts'
+```
+Add this line to your `spec/spec_helper.rb` file:
 
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install puppet_spec_facts
+```ruby
+    require 'spec_helper'
+```
 
 ## Usage
 
-TODO: Write usage instructions here
+The code below doesn't quite work yet, so wait for an update on this before trying to use it.
+
+```rspec
+require 'spec_helper'
+include PuppetSpecFacts # shown here, but should be included from spec_helper.rb
+
+describe 'example' do
+  context 'all operating systems' do
+    PuppetSpecFacts.puppet_platforms.each do |name, facthash|
+    # at this point, name is a human-readable string like:
+    # FreeBSD_10.0-RELEASE_amd64_3.6.2_structured
+    # Debian_wheezy_7.7_i386_PE-3.3.2_stringified
+    # CentOS_5.11_x86_64_3.7.1_structured
+    # etc
+      describe "example class without any parameters on #{name}" do
+        let(:params) {{ }}
+        let(:facts) { facts } # the facter output you sent in above is now available in rspec
+
+        it { should compile.with_all_deps }
+      end
+    end
+  end
+end
+```
+
+In the real world, you probably don't want to iterate through all of the platforms, so `puppet_spec_facts` allows you to query a subset based on facter facts:
+
+```rspec
+require 'spec_helper'
+
+describe 'example' do
+  context 'all operating systems' do
+    PuppetSpecFacts.facts_for_platform_by_fact(select_facts: {'lsbdistid' => 'CentOS',
+                                                              'architecture' => 'x86_64',
+                                                              'is_pe' => 'true',
+                                                              'fact_style' => 'stringified'}) do |name, facthash|
+    # This loads all fact sets for Puppet Enterprise on x86_64 CentOS with stringified-style facts
+      describe "example class without any parameters on #{name}" do
+        let(:params) {{ }}
+        let(:facts) { facts } # the facter output you sent in above is now available in rspec
+
+        it { should compile.with_all_deps }
+      end
+    end
+  end
+end
+```
 
 ## Contributing
 
