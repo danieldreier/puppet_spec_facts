@@ -37,7 +37,7 @@ The code below doesn't quite work yet, so wait for an update on this before tryi
 
 To iterate through all available fact sets, do something like the following in your spec file:
 
-```rspec
+```ruby
 require 'spec_helper'
 include PuppetSpecFacts # shown here, but should be included from spec_helper.rb
 
@@ -62,7 +62,7 @@ end
 
 In the real world, you probably don't want to iterate through all of the platforms, so `puppet_spec_facts` allows you to query a subset based on facter facts:
 
-```rspec
+```ruby
 require 'spec_helper'
 
 describe 'example' do
