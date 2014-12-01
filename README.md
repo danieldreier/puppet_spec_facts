@@ -53,7 +53,7 @@ describe 'example' do
     # etc
       describe "example class without any parameters on #{name}" do
         let(:params) {{ }}
-        let(:facts) { facthash } # the facter output you sent in above is now available in rspec
+        let(:facts) { facthash } # the fact hash from puppet_spec_facts is now available for rspec tests
 
         it { should compile.with_all_deps }
       end
