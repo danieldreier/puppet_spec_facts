@@ -51,7 +51,7 @@ describe 'example' do
     # etc
       describe "example class without any parameters on #{name}" do
         let(:params) {{ }}
-        let(:facts) { facts } # the facter output you sent in above is now available in rspec
+        let(:facts) { facthash } # the facter output you sent in above is now available in rspec
 
         it { should compile.with_all_deps }
       end
@@ -74,7 +74,7 @@ describe 'example' do
     # This loads all fact sets for Puppet Enterprise on x86_64 CentOS with stringified-style facts
       describe "example class without any parameters on #{name}" do
         let(:params) {{ }}
-        let(:facts) { facts } # the facter output you sent in above is now available in rspec
+        let(:facts) { facthash } # the facter output you sent in above is now available in rspec
 
         it { should compile.with_all_deps }
       end
