@@ -22,10 +22,16 @@ module PuppetSpecFacts
       if platforms[platform_name] != nil
         next
       end
-      fact_hash['fact_style'] = fact_style(fact_hash)
-      platforms[platform_name] = fact_hash
+      platforms[platform_name] = overload_facts(fact_hash)
     end
     platforms
+  end
+
+  # inject some additional facts to simplify lookups from rspec
+  def self.overload_facts(fact_hash)
+    fact_hash['fact_style'] = fact_style(fact_hash)
+    fact_hash['is_pe']      = 'true' if is_pe(fact_hash)
+    return fact_hash
   end
 
   def self.puppet_platform_names
@@ -97,8 +103,6 @@ module PuppetSpecFacts
 
     return [osname, codename, version, architecture, puppet_version, fact_style].compact.join('_')
   end
-  def self.make_name_path(fact_hash)
-      end
 
   def self.is_pe(fact_hash)
     return true if fact_hash['puppetversion'].downcase.include?('puppet enterprise')
