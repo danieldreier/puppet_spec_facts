@@ -1,7 +1,7 @@
 # In development, do not use
 
 # PuppetSpecFacts
-[![Build Status](https://travis-ci.org/danieldreier/puppet_spec_facts.svg?branch=master)](https://travis-ci.org/danieldreier/puppet_spec_facts) [![Code Climate](https://codeclimate.com/github/danieldreier/puppet_spec_facts/badges/gpa.svg)](https://codeclimate.com/github/danieldreier/puppet_spec_facts) [![Coverage Status](https://img.shields.io/coveralls/danieldreier/puppet_spec_facts.svg)](https://coveralls.io/r/danieldreier/puppet_spec_facts?branch=master) [![Dependency Status](https://gemnasium.com/danieldreier/puppet_spec_facts.svg)](https://gemnasium.com/danieldreier/puppet_spec_facts)
+[![Build Status](https://travis-ci.org/danieldreier/puppet_spec_facts.svg?branch=master)](https://travis-ci.org/danieldreier/puppet_spec_facts) [![Code Climate](https://codeclimate.com/github/danieldreier/puppet_spec_facts/badges/gpa.svg)](https://codeclimate.com/github/danieldreier/puppet_spec_facts) [![Coverage Status](https://img.shields.io/coveralls/danieldreier/puppet_spec_facts.svg)](https://coveralls.io/r/danieldreier/puppet_spec_facts?branch=master) [![Dependency Status](https://gemnasium.com/danieldreier/puppet_spec_facts.svg)](https://gemnasium.com/danieldreier/puppet_spec_facts) [![Gem Version](https://badge.fury.io/rb/puppet_spec_facts.svg)](http://badge.fury.io/rb/puppet_spec_facts)
 
 This gem provides facts for rspec-puppet, much like
 [apenny/puppet_facts](https://github.com/apenney/puppet_facts) but targeted
