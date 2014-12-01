@@ -26,10 +26,11 @@ Add this line to your puppet module's Gemfile:
 ```gemfile
     gem 'puppet_spec_facts'
 ```
-Add this line to your `spec/spec_helper.rb` file:
+Add these lines to your `spec/spec_helper.rb` file:
 
 ```ruby
-    require 'spec_helper'
+    require 'puppet_spec_facts'
+    include PuppetSpecFacts
 ```
 
 ## Usage
