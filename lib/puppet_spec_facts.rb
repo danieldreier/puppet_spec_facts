@@ -29,8 +29,10 @@ module PuppetSpecFacts
 
   # inject some additional facts to simplify lookups from rspec
   def self.overload_facts(fact_hash)
-    fact_hash['fact_style'] = fact_style(fact_hash)
-    fact_hash['is_pe']      = 'true' if is_pe(fact_hash)
+    fact_hash['fact_style']     = fact_style(fact_hash)
+    fact_hash['is_pe']          = 'true' if is_pe(fact_hash)
+    fact_hash['concat_basedir'] = '/fake_concat_basedir'
+    fact_hash['path']           = '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
     return fact_hash
   end
 
