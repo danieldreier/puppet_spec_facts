@@ -44,7 +44,7 @@ module PuppetSpecFacts
     platform_names
   end
 
-  def self.facts_for_platform_by_fact(factstyle: nil, select_facts: {})
+  def self.facts_for_platform_by_fact(select_facts={})
     puppet_platforms.select { |platform, facts|
       match = true
       select_facts.each { |query_fact, query_value|
@@ -65,11 +65,11 @@ module PuppetSpecFacts
 
   def self.resave_all_facts
     puppet_platforms.each do |name, hash|
-      save_reorganized_facts_to_json(fact_hash: hash)
+      save_reorganized_facts_to_json(hash)
     end
   end
 
-  def self.save_reorganized_facts_to_json(fact_hash: nil, dir: 'facts')
+  def self.save_reorganized_facts_to_json(fact_hash=nil, dir='facts')
     namepath = name_osname(fact_hash)
     save_path = "#{@proj_root}/#{dir}/#{namepath}"
     filename = make_sane_name(fact_hash) + '.json'

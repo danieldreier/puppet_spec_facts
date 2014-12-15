@@ -90,13 +90,13 @@ describe PuppetSpecFacts do
 
   describe 'facts_for_platform_by_fact' do
     it 'returns at least 5 values for "architecture" => "x86_64"' do
-      expect(PuppetSpecFacts.facts_for_platform_by_fact(select_facts: { "architecture" => "x86_64" }).count).to be >= 5
+      expect(PuppetSpecFacts.facts_for_platform_by_fact({ "architecture" => "x86_64" }).count).to be >= 5
     end
     it 'returns at least 5 values for "kernel" => "Linux"' do
-      expect(PuppetSpecFacts.facts_for_platform_by_fact(select_facts: { "kernel" => "Linux" }).count).to be >= 5
+      expect(PuppetSpecFacts.facts_for_platform_by_fact({ "kernel" => "Linux" }).count).to be >= 5
     end
     it 'returns no values for "architecture" => "foo"' do
-      expect(PuppetSpecFacts.facts_for_platform_by_fact(select_facts: { "architecture" => "foo" }).count).to eq(0)
+      expect(PuppetSpecFacts.facts_for_platform_by_fact({ "architecture" => "foo" }).count).to eq(0)
     end
   end
 end
