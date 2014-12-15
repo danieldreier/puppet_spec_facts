@@ -54,8 +54,13 @@ module PuppetSpecFacts
     }
   end
 
-  def self.facts_for_platform_by_name(platform)
-    puppet_platforms[platform]
+  def self.facts_for_platform_by_name(platforms)
+    platforms = [platforms] if platforms.is_a?(String)
+    results = {}
+    platforms.each do |name|
+      results[:"#{name}"] = puppet_platforms[name]
+    end
+    results
   end
 
   def self.resave_all_facts
