@@ -22,6 +22,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "rake"
   spec.add_development_dependency 'rspec'
   spec.add_development_dependency 'coveralls'
-  spec.add_runtime_dependency 'puppet', '~> 3.7'
+  spec.add_runtime_dependency 'puppet'
   spec.add_runtime_dependency 'json'
 end
