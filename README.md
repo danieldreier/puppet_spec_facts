@@ -62,17 +62,22 @@ describe 'example' do
 end
 ```
 
-In the real world, you probably don't want to iterate through all of the platforms, so `puppet_spec_facts` allows you to query a subset based on facter facts:
+In the real world, you probably don't want to iterate through all of the
+platforms, so `puppet_spec_facts` allows you to query a subset based on
+facter facts:
 
 ```ruby
 require 'spec_helper'
 
 describe 'example' do
   context 'all operating systems' do
-    PuppetSpecFacts.facts_for_platform_by_fact(select_facts: {'lsbdistid' => 'CentOS',
-                                                              'architecture' => 'x86_64',
-                                                              'is_pe' => 'true',
-                                                              'fact_style' => 'stringified'}) do |name, facthash|
+    PuppetSpecFacts.facts_for_platform_by_fact(
+      select_facts: {
+        'lsbdistid' => 'CentOS',
+        'architecture' => 'x86_64',
+        'is_pe' => 'true',
+        'fact_style' => 'stringified'
+    }) do |name, facthash|
     # This loads all fact sets for Puppet Enterprise on x86_64 CentOS with stringified-style facts
       describe "example class without any parameters on #{name}" do
         let(:params) {{ }}
@@ -84,3 +89,9 @@ describe 'example' do
   end
 end
 ```
+
+In many cases, this will provide too many results. You can constrain the
+results further by using the `select_facts` parameter to indicate the general
+set, then the `unique_selector` parameter to only return one result for the
+parameters specified in `unique_selector`. For example, you may wish to only get
+one result per `operatingsystemrelease` fact, to avoid testing 
