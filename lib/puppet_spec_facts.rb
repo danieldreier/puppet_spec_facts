@@ -95,7 +95,7 @@ module PuppetSpecFacts
   end
 
   def self.name_codename(fact_hash)
-    return fact_hash['lsbdistcodename'] unless fact_hash['osfamily'] == 'RedHat'
+    return fact_hash['lsbdistcodename'] unless ['RedHat','Gentoo'].include?(fact_hash['osfamily'])
     nil
   end
 
@@ -112,6 +112,7 @@ module PuppetSpecFacts
   end
 
   def self.is_pe(fact_hash)
+    return false unless fact_hash['puppetversion']
     return true if fact_hash['puppetversion'].downcase.include?('puppet enterprise')
     false
   end
