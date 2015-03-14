@@ -28,7 +28,7 @@
   "osfamily": "Archlinux",
   "uptime_days": 0,
   "kernelrelease": "3.15.8-1-ARCH",
-  "path": "/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/core_perl",
+  "path": "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
   "partitions": {
     "sda1": {
       "uuid": "bed7e3f5-b0a2-4927-bbc6-64719339363e",
@@ -82,5 +82,6 @@
   "sshfp_ecdsa": "SSHFP 3 1 78d1c09eb9645dd369fcc1b6c65dc40d3c6baefe\nSSHFP 3 2 679b5a69242d78756960f8cd91ba67db32600235bac742577bce3db19394c585",
   "sshed25519key": "AAAAC3NzaC1lZDI1NTE5AAAAIGpj6cfmB8Z94SwDtShD62BPkeW1i9VSU/VuqBt93Q7E",
   "sshfp_ed25519": "SSHFP 4 1 981bf136a4dd381bf38e506ca81d9631da9ff264\nSSHFP 4 2 61a92f79231f0ba581ac2fa9260d5d55a3ebcae1d00a03ebebb8f10ef093f6f9",
-  "fact_style": "stringified"
+  "fact_style": "stringified",
+  "concat_basedir": "/fake_concat_basedir"
 }

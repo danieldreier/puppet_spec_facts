@@ -98,7 +98,7 @@
   "netmask_eth0": "255.255.255.0",
   "swapfree_mb": "1023.99",
   "operatingsystem": "CentOS",
-  "path": "/usr/kerberos/sbin:/usr/local/sbin:/usr/sbin:/sbin:/usr/kerberos/bin:/usr/local/bin:/bin:/usr/bin:/root/bin",
+  "path": "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
   "fqdn": "server.example.com",
   "selinux": "false",
   "is_virtual": "true",
@@ -123,5 +123,6 @@
   "mtu_eth0": "1500",
   "facterversion": "2.2.0",
   "blockdevices": "hda",
-  "fact_style": "structured"
+  "fact_style": "structured",
+  "concat_basedir": "/fake_concat_basedir"
 }

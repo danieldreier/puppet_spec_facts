@@ -139,5 +139,6 @@
   "lsbdistid": "Debian",
   "selinux": "false",
   "domain": "boxnet",
-  "fact_style": "structured"
+  "fact_style": "structured",
+  "concat_basedir": "/fake_concat_basedir"
 }

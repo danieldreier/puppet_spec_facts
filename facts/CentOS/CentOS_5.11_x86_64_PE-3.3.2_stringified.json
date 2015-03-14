@@ -59,7 +59,7 @@
   "network_lo": "127.0.0.0",
   "operatingsystemmajrelease": "5",
   "operatingsystemrelease": "5.11",
-  "path": "/usr/kerberos/sbin:/usr/local/sbin:/usr/sbin:/sbin:/usr/kerberos/bin:/usr/local/bin:/bin:/usr/bin:/root/bin",
+  "path": "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
   "physicalprocessorcount": 1,
   "processor0": "Intel(R) Core(TM) i7-4850HQ CPU @ 2.30GHz",
   "processorcount": "1",
@@ -80,5 +80,7 @@
   "uptime_seconds": 80,
   "virtual": "virtualbox",
   "is_virtual": "true",
-  "fact_style": "stringified"
+  "fact_style": "stringified",
+  "concat_basedir": "/fake_concat_basedir",
+  "is_pe": "true"
 }

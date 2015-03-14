@@ -81,5 +81,7 @@
   "uptime_seconds": 51,
   "virtual": "virtualbox",
   "is_virtual": "true",
-  "fact_style": "stringified"
+  "fact_style": "stringified",
+  "concat_basedir": "/fake_concat_basedir",
+  "is_pe": "true"
 }

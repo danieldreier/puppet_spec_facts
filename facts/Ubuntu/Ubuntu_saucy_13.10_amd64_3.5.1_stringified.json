@@ -80,5 +80,6 @@
   "augeasversion": "1.1.0",
   "lsbdistcodename": "saucy",
   "filesystems": "ext2,ext3,ext4,iso9660,vfat",
-  "fact_style": "stringified"
+  "fact_style": "stringified",
+  "concat_basedir": "/fake_concat_basedir"
 }

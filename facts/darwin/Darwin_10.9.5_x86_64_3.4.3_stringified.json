@@ -119,7 +119,7 @@
   "network_vboxnet3": "10.20.1.0",
   "network_en6": "10.0.16.0",
   "operatingsystemrelease": "13.4.0",
-  "path": "/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/go/bin:/usr/local/MacGPG2/bin:/usr/local/sbin",
+  "path": "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
   "processorcount": "8",
   "ps": "ps auxwww",
   "puppetversion": "3.4.3",
@@ -131,5 +131,6 @@
   "uptime_seconds": 68451,
   "virtual": "physical",
   "is_virtual": "false",
-  "fact_style": "stringified"
+  "fact_style": "stringified",
+  "concat_basedir": "/fake_concat_basedir"
 }

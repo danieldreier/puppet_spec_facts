@@ -81,6 +81,5 @@
   "virtual": "virtualbox",
   "is_virtual": "true",
   "fact_style": "stringified",
-  "concat_basedir": "/fake_concat_basedir",
-  "is_pe": "true"
+  "concat_basedir": "/fake_concat_basedir"
 }

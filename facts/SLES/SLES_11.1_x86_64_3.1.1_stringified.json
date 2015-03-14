@@ -37,7 +37,7 @@
   "memoryfree": "911.16 MB",
   "interfaces": "eth0,lo",
   "selinux": "false",
-  "path": "/home/vagrant/bin:/usr/local/bin:/usr/bin:/bin:/usr/X11R6/bin:/usr/games:/usr/lib/mit/bin:/usr/lib/mit/sbin",
+  "path": "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
   "kernelversion": "2.6.32.12",
   "boardserialnumber": "0",
   "hostname": "server",
@@ -58,5 +58,6 @@
   "uptime_seconds": 44,
   "network_eth0": "10.0.2.0",
   "rubyversion": "1.8.7",
-  "fact_style": "stringified"
+  "fact_style": "stringified",
+  "concat_basedir": "/fake_concat_basedir"
 }

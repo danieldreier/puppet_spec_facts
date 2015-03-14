@@ -50,7 +50,7 @@
   "ipaddress_eth0": "10.0.2.15",
   "uptime_days": 0,
   "bios_vendor": "innotek GmbH",
-  "path": "/usr/kerberos/sbin:/usr/local/sbin:/usr/sbin:/sbin:/usr/kerberos/bin:/usr/local/bin:/bin:/usr/bin:/root/bin",
+  "path": "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
   "mtu_lo": "16436",
   "architecture": "x86_64",
   "swapfree_mb": "1023.98",
@@ -123,5 +123,6 @@
   "fqdn": "server.example.com",
   "id": "root",
   "macaddress_eth0": "08:00:27:34:7E:01",
-  "fact_style": "structured"
+  "fact_style": "structured",
+  "concat_basedir": "/fake_concat_basedir"
 }
